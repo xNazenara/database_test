@@ -1,9 +1,36 @@
 <html>
   <head>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="index.css" rel='stylesheet'>
   </head>
   <body>
-    <button type="button" name="dldl">get users</button>
+    <div class='main-container'>
+      <div class='title'>statyis about golovnie ubori</div>
+      <div class='posts-container'>
+        <div class="posts-titles">
+          <div class='post-title'>
+            <div class='post-title-value'>kepkas</div>
+            <button class='post-title-edit'>edit</button>
+            <button class='post-title-delete'>delete</button>
+          </div>
+          <div class='post-title'>
+            <div class='post-title-value'>shapkas</div>
+            <button class='post-title-edit'>edit</button>
+            <button class='post-title-delete'>delete</button>
+          </div>
+          <button class='add-button'>+</button>
+        </div>
+        <div class="post-text">jaba is big!!!!!!!!!!</div>
+      </div>
+      <div class='input-container'>
+        <input class='input-title-value' placeholder="Title"></input>
+        <textarea class='input-text-value' placeholder="Some text"></textarea>
+        <div class='input-buttons'>
+          <button class='input-button-close'>close</button>
+          <button class='input-button-add'>add</button>
+        </div>
+      </div>
+    </div>
   </body>
   <script src='index.js'></script>
 </html>
