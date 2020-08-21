@@ -1,4 +1,9 @@
-body {
+@font-face {
+  font-family: BalooTamma2;
+  src: url(fonts/BalooTamma2-SemiBold.ttf);
+}
+
+*, body {
   font-family: BalooTamma2;
 }
 
@@ -78,21 +83,8 @@ body {
   width: 15px;
 }
 
-#button {
-  font-family: BalooTamma2;
-}
-
-.input-text-value {
-  font-family: BalooTamma2;
-}
-
-.input-title-value {
-  font-family: BalooTamma2;
-}
-
-@font-face {
-font-family: BalooTamma2;
-src: url(fonts/BalooTamma2-SemiBold.ttf);
+.hidden {
+  display: none;
 }
 
 ::-webkit-input-placeholder {color:#2540cb;}
