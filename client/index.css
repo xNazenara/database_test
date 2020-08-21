@@ -1,3 +1,7 @@
+body {
+  font-family: BalooTamma2;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -20,7 +24,7 @@
 .posts-titles {
   display: flex;
   flex-direction: column;
-  border: 5px outset #4a4848;
+  border: 5px outset #ffa3f7;
   width: 250px;
   padding: 15px;
   user-select: none;
@@ -28,7 +32,7 @@
 
 .post-text {
   flex-grow: 1;
-  border: 5px outset #4a4848;
+  border: 5px outset #ffa3f7;
   padding: 15px;
   margin-left: 15px;
 }
@@ -44,7 +48,7 @@
 
 .input-container {
   flex-grow: 1;
-  border: 5px outset #4a4848;
+  border: 5px outset #ffa3f7;
   padding: 15px;
   margin-top: 15px;
 }
@@ -68,3 +72,30 @@
   margin-top: 15px;
   user-select: none;
 }
+
+.edit-img, .delete-img, .plus-img {
+  height: 15px;
+  width: 15px;
+}
+
+#button {
+  font-family: BalooTamma2;
+}
+
+.input-text-value {
+  font-family: BalooTamma2;
+}
+
+.input-title-value {
+  font-family: BalooTamma2;
+}
+
+@font-face {
+font-family: BalooTamma2;
+src: url(fonts/BalooTamma2-SemiBold.ttf);
+}
+
+::-webkit-input-placeholder {color:#2540cb;}
+::-moz-placeholder          {color:#2540cb;}
+:-moz-placeholder           {color:#2540cb;}
+:-ms-input-placeholder      {color:#2540cb;}
