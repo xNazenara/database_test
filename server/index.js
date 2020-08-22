@@ -17,11 +17,36 @@ const client = new Client({connectionString: connectionString})
 client.connect()
 
 app.post('/post-create', (req, res) => {
-  // client.query('select * from users', (err, data) => {
-  //   res.send(data.rows)
-  // })
-  console.log(req.body)
-  res.send('234')
+  client.query(`
+    insert into posts (
+      title, value
+    ) values (
+      $1, $2
+    )
+  `,
+  [req.body.titleValue, req.body.textValue],
+  (err) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send("Успешно добавлено!")
+    }
+  })
+
+})
+
+app.get('/posts-get', (req, res) => {
+  client.query(`
+      select * from posts
+  `,
+  (err, data) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send(data.rows)
+    }
+  }
+  )
 })
 
 app.listen(3000, ()=>console.log("Started"))

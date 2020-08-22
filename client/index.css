@@ -49,6 +49,11 @@
 
 .post-title-value {
   flex-grow: 1;
+  cursor: pointer;
+}
+
+.post-title-value:hover {
+  background: gray;
 }
 
 .input-container {
@@ -85,6 +90,10 @@
 
 .hidden {
   display: none;
+}
+
+.add-button {
+  margin-bottom: 25px;
 }
 
 ::-webkit-input-placeholder {color:#2540cb;}
