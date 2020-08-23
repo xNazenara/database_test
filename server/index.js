@@ -49,4 +49,20 @@ app.get('/posts-get', (req, res) => {
   )
 })
 
+app.post('/post-delete', (req, res) => {
+  client.query(`
+    delete from posts p
+    where p.id = $1
+  `,
+  [req.body.id],
+  (err) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send("Успешно удалено!")
+    }
+  })
+
+})
+
 app.listen(3000, ()=>console.log("Started"))

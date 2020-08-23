@@ -50,10 +50,15 @@
 .post-title-value {
   flex-grow: 1;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .post-title-value:hover {
   background: gray;
+}
+
+.post-title-value-selected {
+  background: tomato !important;
 }
 
 .input-container {

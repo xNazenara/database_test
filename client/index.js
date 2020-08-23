@@ -6,6 +6,7 @@ const inputTitle = document.querySelector('.input-title-value')
 const inputText = document.querySelector('.input-text-value')
 const createButton = document.querySelector('.input-button-add')
 const postsTitlesValues = document.querySelector('.posts-titles-values')
+const postText = document.querySelector('.post-text')
 let posts = []
 let titleValue = ''
 let textValue = ''
@@ -22,6 +23,22 @@ const renderPosts = (posts) => {
     postTitleValue.innerHTML = post.title
     postTitle.appendChild(postTitleValue)
 
+    if (i === 0) {
+      postTitleValue.classList.add("post-title-value-selected")
+    }
+
+    postTitleValue.addEventListener('click', (e) => {
+      postText.innerHTML = post.value
+
+      const element = document.querySelector('.post-title-value-selected')
+
+      if (element) {
+        element.classList.remove('post-title-value-selected')
+      }
+
+      postTitleValue.classList.add('post-title-value-selected')
+    })
+
     const postTitleEdit = document.createElement('button')
     postTitleEdit.classList.add("post-title-edit")
 
@@ -35,6 +52,23 @@ const renderPosts = (posts) => {
     const postTitleDelete = document.createElement('button')
     postTitleDelete.classList.add("post-title-delete")
 
+    postTitleDelete.addEventListener('click', (e) => {
+      axios
+        .post('http://localhost:3000/post-delete', {
+          id: post.id
+        })
+        .then(() => {
+          axios
+            .get('http://localhost:3000/posts-get')
+            .then(res=>{
+              posts = res.data
+
+              renderPosts(posts)
+
+            })
+        })
+    })
+
     const deleteImg = document.createElement('img')
     deleteImg.classList.add("delete-img")
     deleteImg.src = 'imgs/delete.svg'
@@ -44,6 +78,10 @@ const renderPosts = (posts) => {
 
     postsTitlesValues.appendChild(postTitle)
   })
+
+  if (posts.length) {
+    postText.innerHTML = posts[0].value
+  }
 }
 
 addButton.addEventListener('click', (e) => {
